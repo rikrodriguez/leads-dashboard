@@ -1,1 +1,1 @@
-{"version":2}
+{"version":2,"outputDirectory":"public","rewrites":[{"source":"/api/leads","destination":"/api/leads"}]}
