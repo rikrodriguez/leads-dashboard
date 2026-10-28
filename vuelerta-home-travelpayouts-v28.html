@@ -234,8 +234,8 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
         <div class="hero-copy">
           <span class="badge"><i class="dot"></i> Flight deals para Latinoamérica</span>
           <div style="height:24px"></div>
-          <h1>Pasajes muy baratos. <span class="accent">Sin pasarte horas buscándolos.</span></h1>
-          <p class="lead">Vuelerta monitorea rutas, detecta caídas de precio, verifica la tarifa y te avisa cuando aparece una oportunidad que realmente vale la pena reservar.</p>
+          <h1>Vuela más lejos. <span class="accent">Pagando mucho menos.</span></h1>
+          <p class="lead">Vuelerta encuentra oportunidades de pasajes excepcionalmente baratos. Estamos preparando alertas personalizadas para que no tengas que pasar horas buscando.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#membresia">Quiero acceso por US$39/año →</a>
             <a class="btn btn-light" href="/explorar">Ver el radar real</a>
@@ -246,7 +246,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
           <div class="deal-app" aria-label="Ejemplo de una alerta Vuelerta">
             <div class="app-bar">
               <div class="app-brand"><i>V</i> Alertas Vuelerta</div>
-              <div class="app-live">● Tarifa verificada</div>
+              <div class="app-live">● Verificada en prueba</div>
             </div>
             <div class="deal-card">
               <div class="deal-top">
@@ -255,11 +255,11 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
               </div>
               <div class="deal-price"><b>US$451</b><span>ida y vuelta</span></div>
               <div class="deal-meta">
-                <div class="meta"><b>Precio típico</b><span>≈ US$647</span></div>
-                <div class="meta"><b>Vuelerta Score</b><span>95 / 100 · excepcional</span></div>
+                <div class="meta"><b>Precio típico</b><span>≈ US$651</span></div>
+                <div class="meta"><b>Vuelerta Score</b><span>92 / 100 · excepcional</span></div>
               </div>
             </div>
-            <div class="app-foot"><span>Confirmado contra fechas comparables</span><strong>Reservar con proveedor →</strong></div>
+            <div class="app-foot"><span>Ejemplo histórico · disponibilidad variable</span><strong>Reservar con proveedor →</strong></div>
           </div>
         </div>
       </div>
@@ -308,7 +308,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
     <div class="section-head">
       <p class="eyebrow">Lo que encuentra Vuelerta</p>
       <h2>No buscamos “vuelos”. Buscamos <span class="accent">momentos anormalmente baratos.</span></h2>
-      <p class="lead">Estos son ejemplos de oportunidades que nuestro motor detectó y verificó durante pruebas recientes desde Lima.</p>
+      <p class="lead">Estos son resultados históricos de pruebas verificadas desde Lima, no precios vigentes. Entra al radar para consultar tarifas actuales.</p>
     </div>
     <div class="deal-grid">
       <article class="offer">
@@ -330,7 +330,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
         <div class="price-row"><b>US$456</b><span>≈21% debajo<br>de su mediana</span></div>
       </article>
     </div>
-    <p class="deals-note">Ejemplos de tarifas verificadas durante pruebas. Los precios cambian constantemente y pueden dejar de estar disponibles.</p>
+    <p class="deals-note">Precios históricos de pruebas anteriores, no ofertas activas ni garantía de disponibilidad. Las tarifas, equipaje y condiciones pueden cambiar. Verifica el total final con el proveedor.</p>
     <div style="margin-top:28px"><a class="btn btn-light" href="/explorar">Abrir radar de vuelos →</a></div>
   </div>
 </section>
@@ -355,7 +355,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
       <article class="position-card new">
         <div class="tag">Vuelerta</div>
         <h3>“Avísame cuando aparezca algo demasiado bueno para ignorarlo.”</h3>
-        <p>La membresía está diseñada para descubrir oportunidades antes de que tú tengas que empezar la búsqueda.</p>
+        <p>Estamos desarrollando la membresía para descubrir oportunidades antes de que tú tengas que empezar la búsqueda.</p>
         <ul>
           <li>Escaneo flexible de fechas y destinos</li>
           <li>Comparación contra precios habituales</li>
@@ -379,11 +379,11 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
       <div class="price-main"><b>US$39</b><span>/ año</span></div>
       <p class="price-sub">≈ US$3.25 al mes. Sin comisión sobre el precio de tus pasajes.</p>
       <ul class="price-features">
-        <li>Alertas de oportunidades inusualmente baratas</li>
+        <li>Alertas de oportunidades inusualmente baratas (próximamente)</li>
         <li>Tarifas verificadas antes de mostrarlas como deal</li>
         <li>Deal Score y comparación contra precios habituales</li>
         <li>Rutas desde Latinoamérica hacia el mundo</li>
-        <li>Acceso al radar de oportunidades</li>
+        <li>Acceso al radar de oportunidades (versión inicial)</li>
       </ul>
       <form class="waitlist" id="waitlist-form">
         <div class="form-row">
@@ -467,7 +467,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   form?.addEventListener('submit',async e=>{
     e.preventDefault();
     const btn=form.querySelector('button[type="submit"]');
-    btn.disabled=true; btn.textContent='Guardando…'; status.textContent='';
+    btn.disabled=true; btn.textContent='Guardando…'; status.textContent=''; status.style.color='#317037';
     try{
       const payload={
         email:document.getElementById('email').value.trim(),
@@ -479,7 +479,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
       const r=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const data=await r.json();
       if(!r.ok) throw new Error(data.error||'No pudimos guardar tu solicitud.');
-      status.textContent='Listo. Te avisaremos cuando abramos el acceso.';
+      status.textContent='Solicitud registrada. El envío automático de correos todavía no está activo; conserva esta página como referencia.';
       form.reset();
       document.getElementById('origin').value='LIM';
     }catch(err){
