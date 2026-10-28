@@ -365,6 +365,63 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .hero-visual .app-foot{font-size:8px}
 .proof-strip{margin:0 12px 12px}
 }
+
+/* v32: strict composition reset, remove legacy cloud/panel hero */
+.hero{padding:0}
+.hero .container{width:100%;max-width:none}
+.hero-shell{border:0;border-radius:0;background:#f4faff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,53%) minmax(0,47%);min-height:660px;position:relative;isolation:isolate}
+.hero-copy{position:relative;z-index:4;padding:65px 12px 65px clamp(26px,5vw,85px)}
+.hero-copy h1{font-size:clamp(49px,5.5vw,83px);line-height:1.01}
+.hero-copy .lead{max-width:550px}
+.hero-visual{position:relative;isolation:auto;min-height:660px;display:flex;justify-content:flex-end;align-items:flex-end;padding:35px}
+.hero-photo{position:absolute;z-index:-1;inset:0 0 0 -55%;border-radius:0;box-shadow:none;background:#8bc4fa}
+.hero-photo img{object-fit:cover;object-position:64% 47%}
+.hero-photo:after{background:linear-gradient(90deg,#f4faff 0%,rgba(244,250,255,.92) 19%,rgba(244,250,255,.20) 48%,transparent 75%)}
+.hero-visual .deal-app{width:305px;max-width:90%;margin:0 5px 10px 0;transform:none;padding:11px;background:rgba(255,255,255,.96)}
+.hero-visual .deal-card{padding:12px}
+.hero-visual .deal-price b{font-size:32px}
+.hero-visual .app-foot{font-size:9px}
+@media(max-width:900px){
+.hero-grid{display:block;min-height:0}
+.hero-copy{padding:36px 26px 18px;position:relative;z-index:3}
+.hero-copy h1{font-size:clamp(45px,7vw,64px)}
+.hero-visual{position:static;min-height:0;padding:24px 26px 28px;display:flex;justify-content:flex-end}
+.hero-photo{inset:0;z-index:-1}
+.hero-photo img{object-position:65% 46%}
+.hero-photo:after{background:linear-gradient(180deg,#f4faff 0%,rgba(244,250,255,.98) 35%,rgba(244,250,255,.70) 65%,rgba(244,250,255,.08) 100%)}
+.hero-visual .deal-app{width:285px;max-width:65%;margin:0}
+}
+@media(max-width:600px){
+.hero-shell{border-radius:0}
+.hero-grid{min-height:0}
+.hero-copy{padding:26px 20px 14px}
+.hero-copy h1{font-size:clamp(38px,10vw,48px);line-height:1.04;margin-bottom:17px}
+.hero-copy .lead{font-size:15px;line-height:1.48;margin-bottom:19px}
+.hero-actions{gap:8px;margin-bottom:12px}
+.hero-actions .btn{min-height:49px}
+.hero-price{font-size:11px;gap:4px}
+.hero-price b{font-size:16px}
+.hero-visual{padding:70px 14px 18px;min-height:275px;justify-content:flex-end}
+.hero-photo{inset:0}
+.hero-photo img{object-position:62% 46%}
+.hero-photo:after{background:linear-gradient(180deg,#f4faff 0%,rgba(244,250,255,.96) 46%,rgba(244,250,255,.28) 75%,rgba(8,37,81,.08) 100%)}
+.hero-visual .deal-app{width:220px;max-width:62%;padding:7px;border-radius:16px}
+.hero-visual .app-bar{padding:2px 0 7px}
+.hero-visual .app-brand{font-size:9px}
+.hero-visual .app-live{font-size:8px;padding:5px}
+.hero-visual .deal-card{padding:7px;margin-top:7px}
+.hero-visual .route{font-size:12px}
+.hero-visual .route small{font-size:9px}
+.hero-visual .save{font-size:8px;padding:5px}
+.hero-visual .deal-price{margin:9px 0}
+.hero-visual .deal-price b{font-size:24px}
+.hero-visual .deal-price span{font-size:8px}
+.hero-visual .deal-meta{grid-template-columns:1fr 1fr}
+.hero-visual .meta{padding:5px}
+.hero-visual .meta b,.hero-visual .meta span{font-size:8px}
+.hero-visual .app-foot{font-size:8px}
+}
 </style>
 </head>
 <body>
@@ -402,7 +459,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
           <div class="hero-price"><b>US$39 al año</b><span>Menos de US$3.25/mes · sin comisión sobre tus vuelos</span></div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1628789451266-a022f596c989?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="" loading="eager" fetchpriority="high" decoding="async" width="1000" height="900"></div>
+          <div class="hero-photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1688499050334-d48bea10190d?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="" loading="eager" fetchpriority="high" decoding="async" width="1000" height="900"></div>
           <div class="deal-app" aria-label="Ejemplo histórico de una alerta Vuelerta">
             <div class="app-bar">
               <div class="app-brand"><i>V</i> Alertas Vuelerta</div>
