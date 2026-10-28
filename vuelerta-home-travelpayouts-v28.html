@@ -309,7 +309,63 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .hero-visual .meta{padding:6px}
 .hero-visual .meta b,.hero-visual .meta span{font-size:8px}
 .hero-visual .app-foot{font-size:8px;gap:3px}
-}</style>
+}
+/* v31 faithful composition: one unified image field, no separate card section */
+.hero{padding:0 0 24px}
+.hero .container{width:min(1440px,100%)}
+.hero-shell{border:0;border-radius:0;min-height:0;background:linear-gradient(90deg,#f7fbff 0%,#f5faff 40%,#e6f4ff 100%)}
+.hero-grid{min-height:680px;grid-template-columns:51% 49%}
+.hero-copy{padding:58px 22px 60px clamp(28px,4.6vw,76px)}
+.hero-copy h1{font-size:clamp(50px,5.3vw,79px);line-height:1.03;max-width:790px}
+.hero-copy .lead{max-width:560px;font-size:19px}
+.hero-visual{padding:28px 28px 28px 0;min-height:680px}
+.hero-photo{inset:0 0 0 -36%;border-radius:0}
+.hero-photo img{object-position:56% 45%}
+.hero-photo:after{background:linear-gradient(90deg,#f7fbff 0%,rgba(247,251,255,.93) 16%,rgba(247,251,255,.52) 35%,rgba(247,251,255,0) 65%)}
+.hero-visual .deal-app{width:310px;max-width:45%;margin:0 12px 0 auto;transform:translateY(150px);padding:12px;border-radius:18px}
+.hero-visual .deal-card{padding:12px}
+.hero-visual .deal-price b{font-size:32px}
+.hero-visual .app-foot{font-size:9px}
+@media(max-width:900px){
+.hero .container{width:100%}
+.hero-grid{grid-template-columns:1fr;min-height:0;position:relative;isolation:isolate}
+.hero-shell{border-radius:0}
+.hero-copy{padding:34px 24px 20px;z-index:3}
+.hero-copy h1{font-size:clamp(43px,7vw,64px)}
+.hero-visual{padding:0 24px 24px;min-height:250px;justify-content:flex-end;align-items:flex-end;isolation:auto}
+.hero-photo{position:absolute;z-index:-1;inset:0;overflow:hidden}
+.hero-photo img{object-position:58% 42%}
+.hero-photo:after{background:linear-gradient(180deg,rgba(247,251,255,.97) 0%,rgba(247,251,255,.94) 35%,rgba(247,251,255,.40) 67%,rgba(7,37,80,.10) 100%)}
+.hero-visual .deal-app{max-width:300px;width:64%;margin:0;transform:none}
+}
+@media(max-width:600px){
+.hero .container{width:100%}
+.hero-shell{border-radius:0}
+.hero-grid{min-height:0}
+.hero-copy{padding:28px 22px 12px}
+.hero-copy h1{font-size:clamp(39px,10vw,48px);margin-bottom:18px}
+.hero-copy .lead{font-size:15px;line-height:1.48;margin-bottom:20px}
+.hero-actions{margin-bottom:12px}
+.hero-actions .btn{min-height:48px}
+.hero-price{font-size:11px}
+.hero-price b{font-size:16px}
+.hero-visual{min-height:200px;padding:0 16px 16px}
+.hero-photo{inset:0}
+.hero-photo img{object-position:58% 48%}
+.hero-photo:after{background:linear-gradient(180deg,#f7fbff 0%,rgba(247,251,255,.94) 44%,rgba(247,251,255,.24) 72%,rgba(9,44,85,.14) 100%)}
+.hero-visual .deal-app{width:230px;max-width:65%;padding:8px;transform:none}
+.hero-visual .deal-card{padding:8px}
+.hero-visual .app-brand{font-size:10px}
+.hero-visual .app-live{font-size:8px}
+.hero-visual .route{font-size:12px}
+.hero-visual .deal-price b{font-size:25px}
+.hero-visual .deal-meta{grid-template-columns:1fr 1fr}
+.hero-visual .meta{padding:5px}
+.hero-visual .meta b,.hero-visual .meta span{font-size:8px}
+.hero-visual .app-foot{font-size:8px}
+.proof-strip{margin:0 12px 12px}
+}
+</style>
 </head>
 <body>
 <header class="site-header">
