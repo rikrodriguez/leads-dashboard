@@ -228,6 +228,57 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   .footer-top{align-items:flex-start;flex-direction:column}
   .footer-links{flex-wrap:wrap}
 }
+
+/* v29: continuous photographic hero, matching the approved composition */
+.hero{padding:20px 0 38px}
+.hero-shell{background:#f1f8ff;min-height:650px}
+.hero-shell:before,.hero-shell:after{display:none}
+.hero-grid{min-height:650px;grid-template-columns:56% 44%}
+.hero-photo{z-index:-1;inset:0 0 0 -32%;border-radius:0;box-shadow:none;overflow:hidden}
+.hero-photo img{object-position:center center}
+.hero-photo:after{background:linear-gradient(90deg,#f5faff 0%,rgba(245,250,255,.96) 18%,rgba(245,250,255,.76) 40%,rgba(245,250,255,.05) 73%)}
+.hero-visual{isolation:auto;padding:32px 28px 32px 0;align-items:flex-end}
+.hero-copy{padding:64px 18px 64px 52px;z-index:2}
+.hero-copy h1{font-size:clamp(47px,5vw,70px)}
+.hero-visual .deal-app{position:relative;z-index:3;margin:0 0 12px auto;max-width:370px;background:rgba(255,255,255,.95);box-shadow:0 15px 48px rgba(18,54,96,.2)}
+@media(max-width:900px){
+ .hero{padding:12px 0 30px}
+ .hero-grid{grid-template-columns:1fr;min-height:0}
+ .hero-shell{background:#f4f9ff}
+ .hero-copy{padding:34px 24px 24px}
+ .hero-copy h1{font-size:clamp(43px,7.5vw,65px)}
+ .hero-visual{min-height:340px;padding:95px 24px 24px;align-items:flex-end}
+ .hero-photo{inset:0;border-radius:0}
+ .hero-photo img{object-position:center 46%}
+ .hero-photo:after{background:linear-gradient(180deg,#f4f9ff 0%,rgba(244,249,255,.12) 25%,rgba(5,34,70,.17) 100%)}
+ .hero-visual .deal-app{max-width:410px;margin:0 0 0 auto}
+}
+@media(max-width:600px){
+ .hero-shell{border-radius:22px}
+ .hero-copy{padding:27px 19px 17px}
+ .hero-copy h1{font-size:clamp(38px,10vw,49px);line-height:1.035;margin-bottom:18px}
+ .hero-copy .lead{font-size:15px;line-height:1.5;margin-bottom:22px}
+ .hero-actions{margin-bottom:17px;gap:9px}
+ .hero-actions .btn{min-height:49px;font-size:13px}
+ .hero-price{font-size:11px}
+ .hero-price b{font-size:16px}
+ .hero-visual{min-height:330px;padding:125px 12px 12px}
+ .hero-photo{inset:0}
+ .hero-photo img{object-position:50% 35%}
+ .hero-visual .deal-app{width:min(100%,340px);padding:10px;border-radius:17px}
+ .app-bar{padding-bottom:8px}
+ .app-brand{font-size:11px}
+ .app-live{font-size:9px}
+ .deal-card{margin-top:8px;padding:12px}
+ .route{font-size:15px}
+ .deal-price{margin:10px 0}
+ .deal-price b{font-size:30px}
+ .deal-meta{grid-template-columns:1fr 1fr;gap:5px}
+ .meta{padding:8px}
+ .meta b{font-size:10px}
+ .meta span{font-size:10px}
+ .app-foot{padding-top:8px;font-size:9px}
+}
 </style>
 </head>
 <body>
