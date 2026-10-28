@@ -176,6 +176,9 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   .container{width:min(100% - 30px,720px)}
   .hero{padding-top:24px}
   .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-shell{background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(245,250,255,.72)),url('/assets/earth-mobile.webp') center/cover}
+  .hero-copy{position:relative;z-index:3}
+  .hero-photo{background:#9acaf4}
   .hero-copy{padding:48px 26px 34px}
   .hero-visual{padding:210px 20px 30px;min-height:510px}
   .hero-photo{inset:0 16px 15px;border-radius:22px}
@@ -198,11 +201,20 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   .hero-actions{width:100%}
   .hero-actions .btn{width:100%}
   .hero-price{align-items:flex-start;flex-direction:column;gap:5px}
-  .hero-visual{padding:190px 14px 20px;min-height:480px}
+  .hero-visual{padding:175px 14px 20px;min-height:440px}
   .hero-photo{inset:0 10px 10px;border-radius:18px}
   .hero-visual .deal-app{margin-top:0}
   .deal-app{padding:12px;border-radius:20px}
   .deal-meta{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(39px,10vw,54px);line-height:1.04}
+  .hero-copy .lead{font-size:16px;line-height:1.5}
+  .hero-copy{padding:32px 18px 22px}
+  .hero-photo{inset:0 8px 8px}
+  .hero-visual{padding-top:230px;min-height:480px}
+  .hero-visual .deal-app{max-width:100%;padding:10px}
+  .deal-card{padding:14px}
+  .app-foot{flex-wrap:wrap}
+  .hero-shell:before,.hero-shell:after{display:none}
   .proof-strip{grid-template-columns:1fr}
   .proof-item{padding:19px 20px}
   .section-head{margin-bottom:36px}
@@ -253,7 +265,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
           <div class="hero-price"><b>US$39 al año</b><span>Menos de US$3.25/mes · sin comisión sobre tus vuelos</span></div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1530545124313-ce5e8eae55af?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="" loading="eager" fetchpriority="high" decoding="async" width="1000" height="900"></div>
+          <div class="hero-photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="" loading="eager" fetchpriority="high" decoding="async" width="1000" height="900"></div>
           <div class="deal-app" aria-label="Ejemplo histórico de una alerta Vuelerta">
             <div class="app-bar">
               <div class="app-brand"><i>V</i> Alertas Vuelerta</div>
