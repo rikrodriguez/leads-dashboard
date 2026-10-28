@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<title>Vuelerta — Pasajes excepcionalmente baratos por US$39 al año</title>
+<meta name="description" content="Vuelerta encuentra pasajes excepcionalmente baratos desde Latinoamérica, verifica la tarifa y te avisa cuando vale la pena reservar. Membresía anual de US$39.">
+<link rel="canonical" href="https://vuelerta-exacta.vercel.app/">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vuelerta">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Pasajes excepcionalmente baratos por US$39 al año | Vuelerta">
+<meta property="og:description" content="Nosotros buscamos. Tú viajas más barato. Vuelerta detecta y verifica oportunidades reales desde Latinoamérica.">
+<meta property="og:url" content="https://vuelerta-exacta.vercel.app/">
+<meta property="og:image" content="https://vuelerta-exacta.vercel.app/assets/vuelerta-social.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111111;
+  --muted:#626977;
+  --blue:#1287f5;
+  --blue-strong:#0876ea;
+  --blue-soft:#eef6ff;
+  --sky:#f5f8fc;
+  --lime:#b8f45a;
+  --lime-soft:#efffd5;
+  --line:#e7e9ee;
+  --paper:#ffffff;
+  --radius:24px;
+  --shadow:0 18px 60px rgba(21,41,72,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}
+.section{padding:112px 0}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#516070;margin:0 0 18px}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{letter-spacing:-.055em}
+h1{font-size:clamp(52px,6.35vw,86px);line-height:.98;font-weight:900;margin-bottom:28px}
+h2{font-size:clamp(38px,4.4vw,62px);line-height:1.02;font-weight:900;margin-bottom:24px}
+h3{font-size:23px;line-height:1.12;font-weight:800}
+.lead{font-size:20px;line-height:1.55;color:var(--muted);max-width:700px}
+.accent{color:var(--blue)}
+.highlight{background:var(--lime);padding:0 .08em;border-radius:.16em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 22px;border-radius:13px;border:1px solid transparent;font-weight:800;font-size:15px;transition:.2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 28px rgba(18,135,245,.22)}
+.btn-primary:hover{background:var(--blue-strong)}
+.btn-dark{background:#111;color:#fff}
+.btn-light{background:#fff;border-color:#dfe4ea;color:#151515}
+.btn-link{min-height:auto;padding:8px 0;border:0;color:var(--blue);background:none}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid #dce4ee;background:#fff;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px #dfffb0}
+.site-header{height:74px;border-bottom:1px solid #edf0f3;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);position:sticky;top:0;z-index:50}
+.nav-wrap{height:100%;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900;letter-spacing:-.055em}
+.brand img{width:38px;height:34px;object-fit:contain}
+.nav{display:flex;align-items:center;gap:30px;margin-left:auto}
+.nav a{font-size:14px;font-weight:600;color:#333b47}
+.nav a:hover{color:var(--blue)}
+.nav-actions{display:flex;gap:10px;margin-left:8px}
+.menu{display:none;border:0;background:#f4f6f8;width:42px;height:42px;border-radius:11px;font-size:22px}
+.hero{padding:64px 0 80px}
+.hero-shell{background:linear-gradient(135deg,#f5f9ff 0%,#eef6ff 62%,#f7fbff 100%);border:1px solid #e2ecf8;border-radius:34px;overflow:hidden;position:relative}
+.hero-shell:before{content:"";position:absolute;right:-140px;top:-190px;width:520px;height:520px;border-radius:50%;background:rgba(18,135,245,.08)}
+.hero-shell:after{content:"";position:absolute;right:120px;bottom:-280px;width:440px;height:440px;border-radius:50%;background:rgba(184,244,90,.2)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;min-height:650px;position:relative;z-index:1}
+.hero-copy{padding:74px 42px 64px 58px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.hero-copy .lead{max-width:610px;margin-bottom:30px;font-size:18px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-price{display:flex;align-items:center;gap:16px;font-size:13px;color:#586272}
+.hero-price b{color:#111;font-size:18px}
+.hero-visual{padding:54px 44px 54px 12px;display:flex;align-items:center}
+.deal-app{width:100%;background:#fff;border:1px solid #dfe7ef;border-radius:25px;box-shadow:0 28px 80px rgba(27,64,105,.16);padding:18px}
+.app-bar{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 18px;border-bottom:1px solid #edf0f4}
+.app-brand{font-size:13px;font-weight:800;display:flex;align-items:center;gap:8px}
+.app-brand i{width:26px;height:26px;border-radius:8px;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal}
+.app-live{font-size:11px;font-weight:700;color:#42704c;background:#effbe9;padding:7px 9px;border-radius:999px}
+.deal-card{margin-top:14px;border:1px solid #e7eaef;border-radius:18px;padding:18px;position:relative}
+.deal-top{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.route{font-size:18px;font-weight:850;letter-spacing:-.035em}
+.route small{display:block;margin-top:5px;color:#7b8492;font-size:12px;font-weight:500;letter-spacing:0}
+.save{font-size:11px;font-weight:800;background:var(--lime-soft);color:#38531c;padding:7px 9px;border-radius:999px;white-space:nowrap}
+.deal-price{display:flex;align-items:end;gap:8px;margin:20px 0 14px}
+.deal-price b{font-size:40px;line-height:.9;letter-spacing:-.06em}
+.deal-price span{font-size:12px;color:#788291;padding-bottom:3px}
+.deal-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.meta{background:#f7f8fa;border-radius:12px;padding:11px}
+.meta b{display:block;font-size:12px;margin-bottom:3px}
+.meta span{font-size:11px;color:#7a8290}
+.app-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 2px 2px;font-size:11px;color:#707887}
+.app-foot strong{color:#111}
+.proof-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e9edf2;border:1px solid #e9edf2;border-radius:22px;overflow:hidden;margin-top:22px}
+.proof-item{background:#fff;padding:24px 26px}
+.proof-item b{display:block;font-size:22px;letter-spacing:-.04em;margin-bottom:5px}
+.proof-item span{font-size:12px;color:#747e8c}
+.section-head{max-width:820px;margin-bottom:56px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:var(--sky);border:1px solid #edf0f4;border-radius:24px;padding:34px 30px;min-height:300px;display:flex;flex-direction:column}
+.step-num{font-size:12px;font-weight:800;color:#657182;margin-bottom:auto}
+.step-icon{width:58px;height:58px;border-radius:17px;background:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 7px 22px rgba(24,45,74,.06);margin-bottom:28px}
+.step h3{margin-bottom:12px}
+.step p{color:#68717e;font-size:15px;line-height:1.55;margin:0}
+.deals-section{background:#101010;color:#fff}
+.deals-section .eyebrow{color:#a7b0bd}
+.deals-section .lead{color:#adb5c0}
+.deal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.offer{background:#fff;color:#111;border-radius:22px;padding:24px;min-height:245px;display:flex;flex-direction:column}
+.offer .pill{align-self:flex-start;background:#eaffc5;color:#39551d;border-radius:999px;padding:8px 10px;font-size:11px;font-weight:800}
+.offer h3{font-size:21px;margin:30px 0 6px}
+.offer .dates{font-size:12px;color:#7a8290}
+.offer .price-row{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:auto}
+.offer .price-row b{font-size:38px;letter-spacing:-.06em}
+.offer .price-row span{font-size:11px;color:#77808e;text-align:right;line-height:1.35}
+.deals-note{font-size:12px;color:#8f98a5;margin-top:18px}
+.positioning{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.position-card{border-radius:26px;padding:42px;min-height:390px}
+.position-card.old{background:#f4f5f7;color:#5f6670}
+.position-card.new{background:var(--blue);color:#fff}
+.position-card .tag{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:28px}
+.position-card h3{font-size:35px;margin-bottom:18px}
+.position-card p{font-size:16px;line-height:1.6;margin-bottom:28px}
+.position-card ul{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+.position-card li{font-size:14px;display:flex;gap:10px;align-items:flex-start}
+.position-card li:before{content:"✓";font-weight:900}
+.old li:before{content:"×"}
+.price-section{background:var(--blue-soft)}
+.price-wrap{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:center}
+.price-copy .lead{margin-bottom:30px}
+.pricing-card{background:#fff;border:1px solid #dfe7ef;border-radius:28px;padding:36px;box-shadow:var(--shadow)}
+.pricing-card .label{display:inline-flex;background:#eef6ff;color:#166ac1;border-radius:999px;padding:8px 10px;font-size:11px;font-weight:800;margin-bottom:24px}
+.price-main{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.price-main b{font-size:66px;letter-spacing:-.07em;line-height:1}
+.price-main span{font-size:15px;color:#6e7784}
+.price-sub{font-size:13px;color:#747e8a;margin-bottom:28px}
+.price-features{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:14px}
+.price-features li{display:flex;gap:11px;font-size:14px}
+.price-features li:before{content:"✓";font-weight:900;color:var(--blue)}
+.waitlist{display:grid;gap:10px}
+.form-row{display:grid;grid-template-columns:.8fr 1.3fr auto;gap:9px}
+.input,.select{height:52px;border:1px solid #dfe3e8;border-radius:12px;background:#fff;padding:0 14px;color:#111;min-width:0}
+.input:focus,.select:focus{outline:3px solid #d9ecff;border-color:#7bbcff}
+.consent{display:flex;gap:8px;font-size:11px;line-height:1.45;color:#7a8290;align-items:flex-start}
+.consent input{margin-top:2px}
+.form-status{font-size:12px;min-height:18px;color:#317037}
+.faq{max-width:880px;margin:auto}
+.faq details{border-top:1px solid #e4e7eb;padding:22px 0}
+.faq details:last-child{border-bottom:1px solid #e4e7eb}
+.faq summary{list-style:none;cursor:pointer;font-size:18px;font-weight:750;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:25px;font-weight:400}
+.faq details[open] summary:after{content:"−"}
+.faq p{color:#6a727e;font-size:15px;line-height:1.65;margin:16px 0 2px;max-width:760px}
+.footer{padding:48px 0 38px;border-top:1px solid #e8eaee}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center;margin-bottom:40px}
+.footer-copy{font-size:12px;color:#818895}
+.footer-links{display:flex;gap:22px;font-size:12px;color:#5c6470}
+@media(max-width:900px){
+  .nav{display:none}.nav-actions .btn-light{display:none}.menu{display:block;margin-left:auto}
+  .container{width:min(100% - 30px,720px)}
+  .hero{padding-top:24px}
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding:48px 26px 34px}
+  .hero-visual{padding:0 20px 34px}
+  h1{font-size:54px}
+  .proof-strip{grid-template-columns:1fr 1fr}
+  .steps,.deal-grid,.positioning,.price-wrap{grid-template-columns:1fr}
+  .section{padding:78px 0}
+  .price-wrap{gap:34px}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 24px)}
+  .site-header{height:66px}
+  .nav-actions .btn-primary{display:none}
+  .hero-shell{border-radius:24px}
+  .hero-copy{padding:38px 20px 28px}
+  h1{font-size:44px}
+  .lead{font-size:17px}
+  .hero-actions{width:100%}
+  .hero-actions .btn{width:100%}
+  .hero-price{align-items:flex-start;flex-direction:column;gap:5px}
+  .hero-visual{padding:0 12px 18px}
+  .deal-app{padding:12px;border-radius:20px}
+  .deal-meta{grid-template-columns:1fr}
+  .proof-strip{grid-template-columns:1fr}
+  .proof-item{padding:19px 20px}
+  .section-head{margin-bottom:36px}
+  .steps{gap:12px}
+  .step{min-height:260px;padding:28px 24px}
+  .deal-grid{gap:12px}
+  .position-card{padding:30px 24px;min-height:auto}
+  .pricing-card{padding:28px 20px}
+  .form-row{grid-template-columns:1fr}
+  .form-row .btn{width:100%}
+  .footer-top{align-items:flex-start;flex-direction:column}
+  .footer-links{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/" aria-label="Vuelerta inicio"><img src="/assets/logo.svg" alt="">Vuelerta</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#membresia">Membresía</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-light" href="/explorar">Ver radar</a>
+      <a class="btn btn-primary" href="#membresia">Acceso US$39/año</a>
+    </div>
+    <button class="menu" id="menu-btn" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="hero-shell">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="badge"><i class="dot"></i> Flight deals para Latinoamérica</span>
+          <div style="height:24px"></div>
+          <h1>Pasajes muy baratos. <span class="accent">Sin pasarte horas buscándolos.</span></h1>
+          <p class="lead">Vuelerta monitorea rutas, detecta caídas de precio, verifica la tarifa y te avisa cuando aparece una oportunidad que realmente vale la pena reservar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#membresia">Quiero acceso por US$39/año →</a>
+            <a class="btn btn-light" href="/explorar">Ver el radar real</a>
+          </div>
+          <div class="hero-price"><b>US$39 al año</b><span>Menos de US$3.25/mes · sin comisión sobre tus vuelos</span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="deal-app" aria-label="Ejemplo de una alerta Vuelerta">
+            <div class="app-bar">
+              <div class="app-brand"><i>V</i> Alertas Vuelerta</div>
+              <div class="app-live">● Tarifa verificada</div>
+            </div>
+            <div class="deal-card">
+              <div class="deal-top">
+                <div class="route">Lima → Cancún<small>22 nov. — 2 dic. · Arajet</small></div>
+                <span class="save">30% debajo</span>
+              </div>
+              <div class="deal-price"><b>US$451</b><span>ida y vuelta</span></div>
+              <div class="deal-meta">
+                <div class="meta"><b>Precio típico</b><span>≈ US$647</span></div>
+                <div class="meta"><b>Vuelerta Score</b><span>95 / 100 · excepcional</span></div>
+              </div>
+            </div>
+            <div class="app-foot"><span>Confirmado contra fechas comparables</span><strong>Reservar con proveedor →</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proof-strip">
+      <div class="proof-item"><b>US$39/año</b><span>Una membresía. Sin cobros por vuelo.</span></div>
+      <div class="proof-item"><b>Verificado</b><span>No llamamos “oferta” a una tarifa sin confirmar.</span></div>
+      <div class="proof-item"><b>LATAM → mundo</b><span>Diseñado desde Latinoamérica, no adaptado después.</span></div>
+      <div class="proof-item"><b>Tú reservas</b><span>Te llevamos a la aerolínea o proveedor disponible.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="como-funciona">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>Nosotros buscamos. <span class="highlight">Tú decides cuándo volar.</span></h2>
+      <p class="lead">No necesitas abrir diez pestañas ni saber exactamente adónde ir. Dinos desde dónde puedes viajar y Vuelerta hace el trabajo repetitivo por ti.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">⌖</div>
+        <h3>Elige desde dónde sales</h3>
+        <p>Configura tu aeropuerto, regiones que te interesan y qué tan flexible eres con las fechas.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">⌁</div>
+        <h3>Vuelerta escanea</h3>
+        <p>Comparamos fechas, rutas y fuentes para detectar precios muy por debajo de lo habitual.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">↗</div>
+        <h3>Recibes la oportunidad</h3>
+        <p>Te mostramos precio, ahorro, itinerario y booking disponible para que reserves si te conviene.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section deals-section" id="ofertas">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Lo que encuentra Vuelerta</p>
+      <h2>No buscamos “vuelos”. Buscamos <span class="accent">momentos anormalmente baratos.</span></h2>
+      <p class="lead">Estos son ejemplos de oportunidades que nuestro motor detectó y verificó durante pruebas recientes desde Lima.</p>
+    </div>
+    <div class="deal-grid">
+      <article class="offer">
+        <span class="pill">Directo · verificado</span>
+        <h3>Lima → Quito</h3>
+        <p class="dates">JetSMART · ida y vuelta</p>
+        <div class="price-row"><b>US$303</b><span>≈26% debajo<br>de su mediana</span></div>
+      </article>
+      <article class="offer">
+        <span class="pill">Verificado</span>
+        <h3>Lima → Cancún</h3>
+        <p class="dates">Arajet · ida y vuelta</p>
+        <div class="price-row"><b>US$451</b><span>≈30% debajo<br>de su mediana</span></div>
+      </article>
+      <article class="offer">
+        <span class="pill">Directo · verificado</span>
+        <h3>Lima → Buenos Aires</h3>
+        <p class="dates">LATAM + JetSMART · ida y vuelta</p>
+        <div class="price-row"><b>US$456</b><span>≈21% debajo<br>de su mediana</span></div>
+      </article>
+    </div>
+    <p class="deals-note">Ejemplos de tarifas verificadas durante pruebas. Los precios cambian constantemente y pueden dejar de estar disponibles.</p>
+    <div style="margin-top:28px"><a class="btn btn-light" href="/explorar">Abrir radar de vuelos →</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">La diferencia</p>
+      <h2>No queremos ser otra pestaña en tu navegador.</h2>
+    </div>
+    <div class="positioning">
+      <article class="position-card old">
+        <div class="tag">Buscar tú mismo</div>
+        <h3>“Sé adónde voy. Ahora tengo que encontrar el mejor precio.”</h3>
+        <p>Funciona cuando ya tienes destino y fechas. Pero requiere volver a buscar, comparar y vigilar cambios.</p>
+        <ul>
+          <li>Revisar rutas una y otra vez</li>
+          <li>Comparar precios sin contexto histórico</li>
+          <li>Depender de que justo estés mirando cuando cae la tarifa</li>
+        </ul>
+      </article>
+      <article class="position-card new">
+        <div class="tag">Vuelerta</div>
+        <h3>“Avísame cuando aparezca algo demasiado bueno para ignorarlo.”</h3>
+        <p>La membresía está diseñada para descubrir oportunidades antes de que tú tengas que empezar la búsqueda.</p>
+        <ul>
+          <li>Escaneo flexible de fechas y destinos</li>
+          <li>Comparación contra precios habituales</li>
+          <li>Verificación de tarifa antes de alertarte</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section price-section" id="membresia">
+  <div class="container price-wrap">
+    <div class="price-copy">
+      <p class="eyebrow">Membresía Vuelerta</p>
+      <h2>Un buen deal puede pagar <span class="highlight">años de membresía.</span></h2>
+      <p class="lead">El objetivo no es que ahorres unos dólares en cada compra. Es encontrar esas pocas oportunidades al año que cambian por completo cuánto cuesta viajar.</p>
+      <p style="font-size:13px;color:#657080;max-width:620px">Estamos abriendo el acceso inicial. El cobro todavía no está activo: deja tu correo y tu aeropuerto de salida para recibir prioridad cuando habilitemos la membresía.</p>
+    </div>
+    <div class="pricing-card">
+      <span class="label">ACCESO ANUAL</span>
+      <div class="price-main"><b>US$39</b><span>/ año</span></div>
+      <p class="price-sub">≈ US$3.25 al mes. Sin comisión sobre el precio de tus pasajes.</p>
+      <ul class="price-features">
+        <li>Alertas de oportunidades inusualmente baratas</li>
+        <li>Tarifas verificadas antes de mostrarlas como deal</li>
+        <li>Deal Score y comparación contra precios habituales</li>
+        <li>Rutas desde Latinoamérica hacia el mundo</li>
+        <li>Acceso al radar de oportunidades</li>
+      </ul>
+      <form class="waitlist" id="waitlist-form">
+        <div class="form-row">
+          <select class="select" id="origin" aria-label="Aeropuerto de salida">
+            <option value="LIM">Lima (LIM)</option>
+            <option value="BOG">Bogotá (BOG)</option>
+            <option value="MEX">Ciudad de México (MEX)</option>
+            <option value="SCL">Santiago (SCL)</option>
+            <option value="EZE">Buenos Aires (EZE)</option>
+            <option value="GRU">São Paulo (GRU)</option>
+            <option value="UIO">Quito (UIO)</option>
+            <option value="MIA">Miami (MIA)</option>
+          </select>
+          <input class="input" id="email" type="email" autocomplete="email" placeholder="Tu correo" required>
+          <button class="btn btn-primary" type="submit">Quiero acceso →</button>
+        </div>
+        <label class="consent"><input id="consent" type="checkbox" required><span>Acepto recibir información sobre el acceso a Vuelerta y su membresía. Consulta nuestra <a href="/privacidad.html" style="text-decoration:underline">política de privacidad</a>.</span></label>
+        <div class="form-status" id="form-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="faq">
+      <p class="eyebrow">FAQ</p>
+      <h2>Lo importante, claro.</h2>
+      <details>
+        <summary>¿Vuelerta vende los pasajes?</summary>
+        <p>No. Vuelerta descubre y verifica oportunidades. Cuando decides reservar, te llevamos al proveedor o aerolínea disponible para completar la compra.</p>
+      </details>
+      <details>
+        <summary>¿Qué hace que una tarifa sea una “oferta”?</summary>
+        <p>No basta con que el número parezca bajo. Comparamos la tarifa con fechas y referencias cercanas, evaluamos el itinerario y solo mostramos como verificada una opción que haya pasado una consulta exacta.</p>
+      </details>
+      <details>
+        <summary>¿Tengo que saber adónde quiero viajar?</summary>
+        <p>No. Ese es uno de los puntos de Vuelerta. Puedes ser flexible y dejar que el precio excepcional te ayude a decidir el destino.</p>
+      </details>
+      <details>
+        <summary>¿Qué cuesta la membresía?</summary>
+        <p>US$39 al año. El cobro todavía no está habilitado durante el acceso inicial; puedes dejar tu correo para recibir prioridad cuando abramos la membresía.</p>
+      </details>
+      <details>
+        <summary>¿Los precios duran para siempre?</summary>
+        <p>No. Las tarifas aéreas cambian constantemente. Por eso mostramos la verificación y buscamos llevarte al booking lo más rápido posible cuando aparece una oportunidad.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="">Vuelerta</a>
+      <div class="footer-links">
+        <a href="/explorar">Radar</a>
+        <a href="/terminos.html">Términos</a>
+        <a href="/privacidad.html">Privacidad</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Vuelerta. Los precios y la disponibilidad de vuelos pueden cambiar. Vuelerta no es una aerolínea ni garantiza que una tarifa permanezca disponible.</div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const menu=document.getElementById('menu-btn');
+  menu?.addEventListener('click',()=>{
+    const nav=document.querySelector('.nav');
+    if(!nav)return;
+    const open=nav.style.display==='flex';
+    if(open){nav.removeAttribute('style');menu.textContent='☰';return}
+    nav.style.cssText='display:flex;position:absolute;top:66px;left:12px;right:12px;background:#fff;border:1px solid #e6e9ee;border-radius:16px;padding:18px;flex-direction:column;align-items:flex-start;box-shadow:0 18px 50px rgba(25,45,70,.12)';
+    menu.textContent='×';
+  });
+  const form=document.getElementById('waitlist-form');
+  const status=document.getElementById('form-status');
+  form?.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn=form.querySelector('button[type="submit"]');
+    btn.disabled=true; btn.textContent='Guardando…'; status.textContent='';
+    try{
+      const payload={
+        email:document.getElementById('email').value.trim(),
+        consent:document.getElementById('consent').checked,
+        prefs:{origin:document.getElementById('origin').value,to:'Cualquiera',flex:'Flexible',group:'1'},
+        requestId:crypto.randomUUID(),
+        website:''
+      };
+      const r=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const data=await r.json();
+      if(!r.ok) throw new Error(data.error||'No pudimos guardar tu solicitud.');
+      status.textContent='Listo. Te avisaremos cuando abramos el acceso.';
+      form.reset();
+      document.getElementById('origin').value='LIM';
+    }catch(err){
+      status.style.color='#a23737';
+      status.textContent=err.message||'No pudimos completar la solicitud.';
+    }finally{
+      btn.disabled=false;btn.textContent='Quiero acceso →';
+    }
+  });
+})();
+</script>
+</body>
+</html>
