@@ -81,7 +81,12 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
 .hero-price{display:flex;align-items:center;gap:16px;font-size:13px;color:#586272}
 .hero-price b{color:#111;font-size:18px}
-.hero-visual{padding:54px 44px 54px 12px;display:flex;align-items:center}
+.hero-visual{padding:46px 35px 46px 8px;display:flex;align-items:center;position:relative;isolation:isolate;min-width:0}
+.hero-photo{position:absolute;z-index:-1;inset:28px 12px 28px 0;overflow:hidden;border-radius:30px;background:#9acaf4;box-shadow:0 20px 50px rgba(28,77,120,.1)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,29,63,.02),rgba(7,30,64,.12) 50%,rgba(7,28,59,.3))}
+.hero-visual .deal-app{margin-top:185px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 22px 55px rgba(13,39,73,.22)}
+@media(prefers-reduced-motion:no-preference){.hero-photo img{animation:plane-appear 900ms ease-out both}@keyframes plane-appear{from{transform:scale(1.045);opacity:.7}to{transform:scale(1);opacity:1}}}
 .deal-app{width:100%;background:#fff;border:1px solid #dfe7ef;border-radius:25px;box-shadow:0 28px 80px rgba(27,64,105,.16);padding:18px}
 .app-bar{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 18px;border-bottom:1px solid #edf0f4}
 .app-brand{font-size:13px;font-weight:800;display:flex;align-items:center;gap:8px}
@@ -172,7 +177,10 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   .hero{padding-top:24px}
   .hero-grid{grid-template-columns:1fr;min-height:auto}
   .hero-copy{padding:48px 26px 34px}
-  .hero-visual{padding:0 20px 34px}
+  .hero-visual{padding:210px 20px 30px;min-height:510px}
+  .hero-photo{inset:0 16px 15px;border-radius:22px}
+  .hero-photo img{object-position:center 35%}
+  .hero-visual .deal-app{margin-top:0}
   h1{font-size:54px}
   .proof-strip{grid-template-columns:1fr 1fr}
   .steps,.deal-grid,.positioning,.price-wrap{grid-template-columns:1fr}
@@ -190,7 +198,9 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   .hero-actions{width:100%}
   .hero-actions .btn{width:100%}
   .hero-price{align-items:flex-start;flex-direction:column;gap:5px}
-  .hero-visual{padding:0 12px 18px}
+  .hero-visual{padding:190px 14px 20px;min-height:480px}
+  .hero-photo{inset:0 10px 10px;border-radius:18px}
+  .hero-visual .deal-app{margin-top:0}
   .deal-app{padding:12px;border-radius:20px}
   .deal-meta{grid-template-columns:1fr}
   .proof-strip{grid-template-columns:1fr}
@@ -243,7 +253,8 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
           <div class="hero-price"><b>US$39 al año</b><span>Menos de US$3.25/mes · sin comisión sobre tus vuelos</span></div>
         </div>
         <div class="hero-visual">
-          <div class="deal-app" aria-label="Ejemplo de una alerta Vuelerta">
+          <div class="hero-photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1530545124313-ce5e8eae55af?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="" loading="eager" fetchpriority="high" decoding="async" width="1000" height="900"></div>
+          <div class="deal-app" aria-label="Ejemplo histórico de una alerta Vuelerta">
             <div class="app-bar">
               <div class="app-brand"><i>V</i> Alertas Vuelerta</div>
               <div class="app-live">● Verificada en prueba</div>
