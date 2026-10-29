@@ -443,6 +443,56 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .hero-photo:after{background:linear-gradient(180deg,#f4faff 0%,rgba(244,250,255,.96) 38%,rgba(244,250,255,.68) 59%,rgba(244,250,255,.08) 100%)}
 .hero-visual .deal-app{width:228px;max-width:65%;margin:0}
 }
+
+/* v34 hero replacement: one shared image layer and compact deal chips */
+.hero{padding:0}
+.hero .container{width:100%;max-width:none}
+.hero-shell{position:relative;overflow:hidden;background:#f4faff;border:0;border-radius:0}
+.hero-grid{position:relative;isolation:isolate;display:grid;grid-template-columns:52% 48%;min-height:620px}
+.hero-copy{position:relative;z-index:2;padding:72px 18px 68px clamp(32px,5vw,82px);align-items:flex-start;justify-content:center}
+.hero-copy h1{font-size:clamp(48px,5.3vw,78px);line-height:1.015;max-width:720px}
+.hero-copy .lead{font-size:18px;max-width:540px}
+.hero-visual{position:relative;z-index:1;isolation:auto;display:flex;align-items:center;justify-content:flex-end;min-height:620px;padding:40px 5% 40px 0}
+.hero-photo{position:absolute;z-index:-1;inset:0 0 0 -110%;overflow:hidden;border-radius:0;box-shadow:none}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 48%;animation:none}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f4faff 0%,rgba(244,250,255,.99) 28%,rgba(244,250,255,.76) 43%,rgba(244,250,255,.12) 65%,rgba(244,250,255,0) 100%)}
+.hero-deals{display:grid;gap:14px;width:min(100%,295px);margin-left:auto;margin-top:90px}
+.mini-deal{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 18px;border:1px solid rgba(219,231,244,.8);background:rgba(255,255,255,.96);border-radius:17px;box-shadow:0 12px 32px rgba(17,50,91,.14)}
+.mini-route{font-size:14px;font-weight:800;white-space:nowrap}
+.mini-route small{font-size:15px}
+.mini-price{font-size:17px;font-weight:900;white-space:nowrap}
+.mini-price small{display:block;text-align:right;font-size:9px;color:#697789;font-weight:600;margin-top:3px}
+@media(max-width:900px){
+.hero-grid{display:grid;grid-template-columns:1fr;min-height:700px;grid-template-rows:auto 1fr}
+.hero-copy{padding:38px 28px 12px;z-index:3}
+.hero-copy h1{font-size:clamp(45px,7.5vw,66px)}
+.hero-visual{position:static;min-height:260px;padding:10px 28px 28px;align-items:flex-end;justify-content:flex-end}
+.hero-photo{position:absolute;inset:0;z-index:-1}
+.hero-photo img{object-position:60% 50%}
+.hero-photo:after{background:linear-gradient(180deg,#f4faff 0%,rgba(244,250,255,.99) 37%,rgba(244,250,255,.82) 57%,rgba(244,250,255,.16) 100%)}
+.hero-deals{margin:0;width:min(100%,285px);gap:9px}
+.mini-deal{padding:12px 13px}
+}
+@media(max-width:600px){
+.hero-grid{min-height:720px;grid-template-rows:auto 1fr}
+.hero-copy{padding:30px 22px 10px}
+.hero-copy h1{font-size:clamp(39px,10vw,49px);line-height:1.02;margin-bottom:17px}
+.hero-copy .lead{font-size:15px;line-height:1.48;margin-bottom:20px}
+.hero-actions{gap:8px;margin-bottom:12px}
+.hero-actions .btn{min-height:48px;font-size:13px}
+.hero-price{font-size:11px}
+.hero-price b{font-size:16px}
+.hero-visual{min-height:210px;padding:10px 15px 20px}
+.hero-photo img{object-position:60% 49%}
+.hero-photo:after{background:linear-gradient(180deg,#f4faff 0%,rgba(244,250,255,.99) 40%,rgba(244,250,255,.77) 63%,rgba(244,250,255,.04) 100%)}
+.hero-deals{width:200px;gap:7px}
+.mini-deal{padding:9px 10px;border-radius:11px;gap:4px}
+.mini-route{font-size:10px}
+.mini-route small{font-size:11px}
+.mini-price{font-size:12px}
+.mini-price small{font-size:8px}
+.proof-strip{margin:0 12px 12px}
+}
 </style>
 </head>
 <body>
@@ -481,23 +531,10 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
         </div>
         <div class="hero-visual">
           <div class="hero-photo" aria-hidden="true"><img src="https://images.unsplash.com/photo-1688499050334-d48bea10190d?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="" loading="eager" fetchpriority="high" decoding="async" width="1000" height="900"></div>
-          <div class="deal-app" aria-label="Ejemplo histórico de una alerta Vuelerta">
-            <div class="app-bar">
-              <div class="app-brand"><i>V</i> Alertas Vuelerta</div>
-              <div class="app-live">● Verificada en prueba</div>
-            </div>
-            <div class="deal-card">
-              <div class="deal-top">
-                <div class="route">Lima → Cancún<small>22 nov. — 2 dic. · Arajet</small></div>
-                <span class="save">30% debajo</span>
-              </div>
-              <div class="deal-price"><b>US$451</b><span>ida y vuelta</span></div>
-              <div class="deal-meta">
-                <div class="meta"><b>Precio típico</b><span>≈ US$651</span></div>
-                <div class="meta"><b>Vuelerta Score</b><span>92 / 100 · excepcional</span></div>
-              </div>
-            </div>
-            <div class="app-foot"><span>Ejemplo histórico · disponibilidad variable</span><strong>Reservar con proveedor →</strong></div>
+          <div class="hero-deals" aria-label="Ejemplos históricos de tarifas detectadas">
+            <div class="mini-deal"><span class="mini-route">Lima → Cancún <small>🇲🇽</small></span><span class="mini-price">US$451 <small>histórico</small></span></div>
+            <div class="mini-deal"><span class="mini-route">Lima → Quito <small>🇪🇨</small></span><span class="mini-price">US$303 <small>histórico</small></span></div>
+            <div class="mini-deal"><span class="mini-route">Lima → Buenos Aires <small>🇦🇷</small></span><span class="mini-price">US$456 <small>histórico</small></span></div>
           </div>
         </div>
       </div>
