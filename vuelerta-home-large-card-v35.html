@@ -351,6 +351,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .demo-person strong{display:block;font-size:14px}
 .demo-person span:not(.demo-avatar){display:block;color:#788394;font-size:12px;margin-top:4px}
 @media(max-width:600px){.demo-quote-card{padding:25px;border-radius:21px}}
+.demo-quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.demo-quote-grid .demo-quote-card{max-width:none;min-height:325px;padding:27px;display:flex;flex-direction:column}.demo-quote-grid .demo-quote-card h3{font-size:19px;line-height:1.2;margin:0 0 13px}.demo-quote-grid .demo-quote-card blockquote{font-size:16px;line-height:1.55;letter-spacing:-.015em;font-weight:500;margin:0 0 25px}.demo-quote-grid .demo-quote-card .demo-person{margin-top:auto}.demo-quote-grid .demo-stars{font-size:16px;margin-bottom:17px}@media(max-width:900px){.demo-quote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.demo-quote-grid{grid-template-columns:1fr;gap:12px}.demo-quote-grid .demo-quote-card{min-height:0;padding:23px}}
 </style>
 </head>
 <body>
@@ -553,19 +554,13 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   </div>
 </section>
 
-<section class="section testimonials" id="testimonios">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">Así se siente encontrar un buen vuelo</p>
-      <h2>Viajar más. <span class="accent">Gastar menos.</span></h2>
-    </div>
-    <div class="demo-quote-card">
-      <div class="demo-stars" aria-label="Cinco estrellas ilustrativas">★★★★★</div>
-      <blockquote>“Siempre pensaba que viajar fuera de mi país era demasiado caro. Con una oferta así, puedo planear un viaje que antes ni consideraba.”</blockquote>
-      <div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Viajero de Vuelerta</strong><span>Experiencia ilustrativa para esta demo</span></div></div>
-    </div>
-  </div>
-</section>
+<section class="section testimonials" id="testimonios"><div class="container"><div class="section-head"><p class="eyebrow">Experiencias de viaje</p><h2>Viajar más. <span class="accent">Gastar menos.</span></h2><p class="lead">Siete testimonios ilustrativos para mostrar cómo se verá esta sección cuando incorporemos reseñas verificadas.</p></div><div class="demo-quote-grid"><article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>Viajar sin decidirlo todo con meses de anticipación</h3><blockquote>“Siempre pensaba que viajar fuera de mi país era demasiado caro. Una buena oferta me anima a considerar destinos que antes descartaba.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 1</strong><span>Testimonio ilustrativo · demo</span></div></div></article>
+<article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>La oportunidad de conocer otro destino</h3><blockquote>“Me encanta la idea de elegir el próximo viaje porque apareció un precio excepcional, no solo porque ya tenía un destino decidido.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 2</strong><span>Testimonio ilustrativo · demo</span></div></div></article>
+<article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>Menos tiempo buscando</h3><blockquote>“No quiero pasar mis noches comparando vuelos. Prefiero que alguien encuentre las oportunidades y me avise cuando valgan la pena.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 3</strong><span>Testimonio ilustrativo · demo</span></div></div></article>
+<article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>Viajar más seguido</h3><blockquote>“Si encuentro un pasaje mucho más barato de lo habitual, puedo dedicar más presupuesto a experiencias, hoteles y actividades.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 4</strong><span>Testimonio ilustrativo · demo</span></div></div></article>
+<article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>Una escapada inesperada</h3><blockquote>“Una tarifa realmente baja puede convertir un fin de semana cualquiera en una escapada que no tenía planeada.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 5</strong><span>Testimonio ilustrativo · demo</span></div></div></article>
+<article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>Flexibilidad que se convierte en ahorro</h3><blockquote>“Puedo mover mis fechas algunos días. Si eso significa pagar bastante menos por el mismo viaje, me interesa saberlo.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 6</strong><span>Testimonio ilustrativo · demo</span></div></div></article>
+<article class="demo-quote-card"><div class="demo-stars" aria-label="Cinco estrellas decorativas">★★★★★</div><h3>Descubrir oportunidades antes de que desaparezcan</h3><blockquote>“Lo que más valoro es recibir una alerta clara, con precio y fechas, para decidir rápido si quiero aprovecharla.”</blockquote><div class="demo-person"><span class="demo-avatar" aria-hidden="true">V</span><div><strong>Perfil de viajero 7</strong><span>Testimonio ilustrativo · demo</span></div></div></article></div></div></section>
 <section class="section" id="faq">
   <div class="container">
     <div class="faq">
