@@ -393,6 +393,18 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
  .nav a{display:block;padding:14px 15px;font-size:14px;border-radius:9px}
  .nav a:hover,.nav a:focus-visible{background:#eef6ff}
 }
+/* v44: corrected mobile header placement */
+.nav-mobile-cta{display:none!important}
+@media(max-width:900px){
+.site-header{height:66px}
+.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav-wrap .brand{margin-right:auto}
+.nav-actions{display:none!important}
+.menu{display:flex!important;order:3;margin-left:auto;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid #e0e7f0;border-radius:12px;background:#f5f8fc;font-size:23px;color:#111b30}
+.nav{top:calc(100% + 6px);left:0;right:0}
+.nav .nav-mobile-cta{display:block!important;background:#087df5;color:#fff;text-align:center;font-weight:800;margin-top:5px}
+}
+@media(min-width:901px){.nav-mobile-cta{display:none!important}}
 </style>
 </head>
 <body>
@@ -405,6 +417,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
       <a href="#membresia">Membresía</a>
       <a href="#faq">Preguntas frecuentes</a>
       <a href="/explorar">Radar de vuelos</a>
+      <a class="nav-mobile-cta" href="#membresia">Quiero acceso →</a>
     </nav>
     <div class="nav-actions">
       
