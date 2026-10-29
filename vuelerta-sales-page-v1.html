@@ -433,6 +433,17 @@ html{scroll-padding-top:90px}
  .footer-links{row-gap:12px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* v47 optional flight preferences */
+.lead-preferences{border:1px solid #e0e7ef;border-radius:13px;background:#f8fbff;padding:12px 15px}
+.lead-preferences summary{cursor:pointer;font-size:13px;font-weight:750;display:flex;justify-content:space-between;gap:10px;align-items:center;list-style:none}
+.lead-preferences summary::-webkit-details-marker{display:none}
+.lead-preferences summary:before{content:"+";font-size:18px;color:#0876ea;margin-right:3px}
+.lead-preferences[open] summary:before{content:"−"}
+.lead-preferences .optional{font-size:10px;font-weight:600;color:#7b8899;margin-left:auto}
+.lead-pref-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:16px}
+.lead-pref-grid label{font-size:11px;font-weight:700;color:#5e7083;line-height:1.4}
+.lead-pref-grid select{width:100%;height:44px;margin-top:6px;font-size:12px;padding:0 9px}
+@media(max-width:600px){.lead-pref-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -658,6 +669,35 @@ html{scroll-padding-top:90px}
           <input class="input" id="email" type="email" autocomplete="email" placeholder="Tu correo" required>
           <button class="btn btn-primary" type="submit">Quiero acceso →</button>
         </div>
+        <details class="lead-preferences">
+          <summary>Personalizar mis oportunidades <span class="optional">Opcional</span></summary>
+          <div class="lead-pref-grid">
+            <label for="pref-to">Destinos que me interesan
+              <select id="pref-to" class="select">
+                <option value="Cualquiera">Cualquier destino</option>
+                <option value="LATAM">Latinoamérica</option>
+                <option value="Europa">Europa</option>
+                <option value="Norteamérica">Norteamérica</option>
+                <option value="Asia">Asia</option>
+              </select>
+            </label>
+            <label for="pref-flex">Mis fechas
+              <select id="pref-flex" class="select">
+                <option value="Flexible">Soy flexible</option>
+                <option value="Meses">Tengo meses aproximados</option>
+                <option value="Fijas">Tengo fechas definidas</option>
+              </select>
+            </label>
+            <label for="pref-group">Personas que suelen viajar
+              <select id="pref-group" class="select">
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+              </select>
+            </label>
+          </div>
+        </details>
         <label class="consent"><input id="consent" type="checkbox" required><span>Acepto recibir información sobre el acceso a Vuelerta y su membresía. Consulta nuestra <a href="/privacidad.html" style="text-decoration:underline">política de privacidad</a>.</span></label>
         <div class="form-status" id="form-status" aria-live="polite"></div>
       </form>
@@ -750,13 +790,13 @@ html{scroll-padding-top:90px}
       const payload={
         email:document.getElementById('email').value.trim(),
         consent:document.getElementById('consent').checked,
-        prefs:{origin:document.getElementById('origin').value,to:'Cualquiera',flex:'Flexible',group:'1'},
+        prefs:{origin:document.getElementById('origin').value,to:document.getElementById('pref-to').value,flex:document.getElementById('pref-flex').value,group:document.getElementById('pref-group').value},
         requestId:crypto.randomUUID(),
         website:''
       };
       const r=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const data=await r.json();
-      if(!r.ok) throw new Error(data.error||'No pudimos guardar tu solicitud.');
+      if(!r.ok || data.ok===false) throw new Error(data.error||'No pudimos guardar tu solicitud.');
       status.textContent='Solicitud recibida. El acceso todavía no está habilitado y el envío automático de correos está en preparación.';
       form.reset();
       document.getElementById('origin').value='LIM';
