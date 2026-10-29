@@ -352,6 +352,31 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .demo-person span:not(.demo-avatar){display:block;color:#788394;font-size:12px;margin-top:4px}
 @media(max-width:600px){.demo-quote-card{padding:25px;border-radius:21px}}
 .demo-quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.demo-quote-grid .demo-quote-card{max-width:none;min-height:325px;padding:27px;display:flex;flex-direction:column}.demo-quote-grid .demo-quote-card h3{font-size:19px;line-height:1.2;margin:0 0 13px}.demo-quote-grid .demo-quote-card blockquote{font-size:16px;line-height:1.55;letter-spacing:-.015em;font-weight:500;margin:0 0 25px}.demo-quote-grid .demo-quote-card .demo-person{margin-top:auto}.demo-quote-grid .demo-stars{font-size:16px;margin-bottom:17px}@media(max-width:900px){.demo-quote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.demo-quote-grid{grid-template-columns:1fr;gap:12px}.demo-quote-grid .demo-quote-card{min-height:0;padding:23px}}
+
+.cro-trust{padding:36px 0 88px;background:#fff}
+.cro-media{border-bottom:1px solid #e9edf3;padding:14px 0 32px;display:flex;align-items:center;gap:30px}
+.cro-media-label{font-size:11px;font-weight:850;letter-spacing:.14em;color:#67788b;white-space:nowrap}
+.cro-media-placeholder{font-size:13px;color:#8995a4;background:#f5f7fa;border:1px dashed #d8e0e8;border-radius:12px;padding:15px 20px;flex:1;text-align:center}
+.cro-value{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center;padding-top:75px}
+.cro-tag{display:inline-flex;background:#eaf4ff;color:#0876ea;padding:9px 14px;border-radius:999px;font-size:12px;font-weight:800;margin-bottom:23px}
+.cro-value h2{font-size:clamp(34px,4vw,54px);margin-bottom:19px}
+.cro-value-copy>p{font-size:15px;color:#667484;line-height:1.6;max-width:660px}
+.cro-bullets{display:grid;gap:17px;margin:29px 0 30px}
+.cro-bullets>div{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#627082;line-height:1.55}
+.cro-bullets strong{color:#142032}
+.cro-check{width:23px;height:23px;flex:none;background:#e4f7d7;color:#328030;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900}
+.cro-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cro-actions>span{font-size:11px;color:#7c8796}
+.cro-side{border:1px solid #dce8f5;background:#f0f7ff;border-radius:26px;padding:30px}
+.cro-side-top{display:flex;align-items:center;gap:12px;color:#1875d5;font-weight:800;font-size:12px;margin-bottom:26px}
+.cro-side-icon{display:grid;place-items:center;background:#fff;width:44px;height:44px;border-radius:13px;font-size:22px}
+.cro-side h3{font-size:27px;margin-bottom:25px}
+.cro-side-row{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-top:1px solid #d6e3f0;font-size:12px}
+.cro-side-row span{color:#667b90}
+.cro-side-row strong{text-align:right}
+.cro-side>p{font-size:11px;color:#7d8b99;line-height:1.6;margin:20px 0 0}
+@media(max-width:900px){.cro-value{grid-template-columns:1fr;gap:28px}.cro-trust{padding-bottom:60px}}
+@media(max-width:600px){.cro-media{flex-direction:column;align-items:flex-start;gap:10px}.cro-media-placeholder{width:100%}.cro-value{padding-top:45px}.cro-side{padding:24px}.cro-actions .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -420,6 +445,33 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   </div>
 </section>
 
+<section class="cro-trust" aria-label="Confianza y ventajas">
+<div class="container">
+  <div class="cro-media"><span class="cro-media-label">AS SEEN ON · VISTO EN</span><div class="cro-media-placeholder">Espacio reservado para medios y publicaciones que hayan mencionado Vuelerta</div></div>
+  <div class="cro-value">
+    <div class="cro-value-copy">
+      <span class="cro-tag">Más viajes, menos gasto</span>
+      <h2>Queremos ayudar a <span class="accent">más de 1,000 viajeros</span> a comprar vuelos mucho más baratos.</h2>
+      <p>Estamos en fase de lanzamiento. Esta es nuestra meta inicial, no una cifra de compras realizadas.</p>
+      <div class="cro-bullets">
+        <div><span class="cro-check">✓</span><span><strong>Oportunidades fuera de lo común.</strong> Detectamos precios por debajo de las referencias habituales.</span></div>
+        <div><span class="cro-check">✓</span><span><strong>Información antes de decidir.</strong> Revisa precio, fechas y condiciones de la tarifa.</span></div>
+        <div><span class="cro-check">✓</span><span><strong>Menos horas comparando.</strong> Estamos preparando alertas según tus aeropuertos y preferencias.</span></div>
+        <div><span class="cro-check">✓</span><span><strong>Tú controlas la reserva.</strong> El pago del vuelo se realiza con el proveedor correspondiente.</span></div>
+      </div>
+      <div class="cro-actions"><a class="btn btn-primary" href="#membresia">Quiero acceso anticipado →</a><span>Sin pago por registrarte en la lista de acceso</span></div>
+    </div>
+    <div class="cro-side">
+      <div class="cro-side-top"><span class="cro-side-icon">✈</span><span>¿Qué recibes?</span></div>
+      <h3>Una oportunidad clara, no 50 pestañas abiertas.</h3>
+      <div class="cro-side-row"><span>Ruta y fechas</span><strong>De un vistazo</strong></div>
+      <div class="cro-side-row"><span>Precio de referencia</span><strong>Con contexto</strong></div>
+      <div class="cro-side-row"><span>Disponibilidad</span><strong>Por confirmar al reservar</strong></div>
+      <p>Los precios de vuelos cambian. Nunca garantizamos disponibilidad hasta que el proveedor confirme la reserva.</p>
+    </div>
+  </div>
+</div>
+</section>
 <section class="section" id="como-funciona">
   <div class="container">
     <div class="section-head">
