@@ -330,6 +330,18 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .hero-visual{padding:12px 12px 17px;min-height:0}
 .hero-visual .deal-app{margin:0 auto}
 }
+
+.testimonials{background:#f6f9fd}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.testimonial-card{display:flex;flex-direction:column;min-height:280px;padding:30px;background:#fff;border:1px solid #e1e8f0;border-radius:24px;box-shadow:0 10px 30px rgba(19,52,94,.035)}
+.testimonial-kicker{font-size:12px;font-weight:800;color:#0b76dd;letter-spacing:.01em;margin-bottom:26px}
+.testimonial-card strong{font-size:43px;letter-spacing:-.055em;line-height:1.1}
+.testimonial-card strong small{font-size:13px;letter-spacing:0;color:#7a8491;font-weight:600}
+.testimonial-card p{font-size:14px;color:#647181;line-height:1.65;margin:18px 0 25px}
+.testimonial-footer{font-size:11px;color:#87909c;margin-top:auto}
+.testimonial-upcoming{background:#eaf4ff}
+.testimonial-quote{font-size:24px;font-weight:800;letter-spacing:-.04em;line-height:1.2}
+@media(max-width:900px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{min-height:225px;padding:25px}}
 </style>
 </head>
 <body>
@@ -532,6 +544,35 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   </div>
 </section>
 
+<section class="section testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Confianza y experiencias</p>
+      <h2>Ofertas comprobadas. <span class="accent">Opiniones reales, sin inventar.</span></h2>
+      <p class="lead">Estamos abriendo Vuelerta a sus primeros usuarios. Mientras llegan experiencias de miembros que podamos verificar y publicar con autorización, estos son resultados históricos de pruebas del radar.</p>
+    </div>
+    <div class="testimonial-grid">
+      <article class="testimonial-card">
+        <span class="testimonial-kicker">Caso de prueba · Lima → Cancún</span>
+        <strong>US$451 <small>ida y vuelta</small></strong>
+        <p>Tarifa detectada y comprobada durante pruebas. No implica disponibilidad actual ni que un cliente haya reservado.</p>
+        <span class="testimonial-footer">Ejemplo histórico, no testimonio</span>
+      </article>
+      <article class="testimonial-card">
+        <span class="testimonial-kicker">Caso de prueba · Lima → Quito</span>
+        <strong>US$303 <small>ida y vuelta</small></strong>
+        <p>Oportunidad identificada en el radar. Las condiciones, fechas y precios pueden cambiar.</p>
+        <span class="testimonial-footer">Ejemplo histórico, no testimonio</span>
+      </article>
+      <article class="testimonial-card testimonial-upcoming">
+        <span class="testimonial-kicker">Testimonios de miembros</span>
+        <div class="testimonial-quote">“Tu experiencia podría aparecer aquí.”</div>
+        <p>Publicaremos reseñas auténticas de viajeros una vez que prueben Vuelerta y autoricen compartir su experiencia.</p>
+        <span class="testimonial-footer">Primeros miembros · próximamente</span>
+      </article>
+    </div>
+  </div>
+</section>
 <section class="section" id="faq">
   <div class="container">
     <div class="faq">
