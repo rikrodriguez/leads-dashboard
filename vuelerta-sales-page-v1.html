@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <title>Vuelerta | Deja de pagar de más por tus vuelos</title>
-<meta name="description" content="Vuelerta encuentra pasajes excepcionalmente baratos desde Latinoamérica, verifica la tarifa y te avisa cuando vale la pena reservar. Membresía anual de US$39.">
+<meta name="description" content="Descubre oportunidades de vuelos baratos desde Latinoamérica. Explora el radar de Vuelerta y solicita acceso anticipado a la membresía anual de US$39.">
 <link rel="canonical" href="https://vuelerta-exacta.vercel.app/">
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vuelerta">
 <meta property="og:locale" content="es_PE">
-<meta property="og:title" content="Pasajes excepcionalmente baratos por US$39 al año | Vuelerta">
-<meta property="og:description" content="Nosotros buscamos. Tú viajas más barato. Vuelerta detecta y verifica oportunidades reales desde Latinoamérica.">
+<meta property="og:title" content="Deja de pagar de más por tus vuelos | Vuelerta">
+<meta property="og:description" content="Descubre ofertas de vuelos desde Latinoamérica. Explora oportunidades y solicita acceso anticipado a Vuelerta.">
 <meta property="og:url" content="https://vuelerta-exacta.vercel.app/">
 <meta property="og:image" content="https://vuelerta-exacta.vercel.app/assets/vuelerta-social.webp">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -405,9 +406,37 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
 .nav .nav-mobile-cta{display:block!important;background:#087df5;color:#fff;text-align:center;font-weight:800;margin-top:5px}
 }
 @media(min-width:901px){.nav-mobile-cta{display:none!important}}
+
+/* v45 accessibility, SEO and responsive quality */
+.skip-link{position:fixed;z-index:9999;top:-80px;left:14px;padding:12px 16px;background:#101b30;color:white;border-radius:10px;font-weight:800}
+.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid #4b9df7;outline-offset:3px}
+html{scroll-padding-top:90px}
+.hero-shell{overflow:hidden}
+@media(max-width:900px){
+ .site-header{overflow:visible}
+ .nav-wrap{min-width:0}
+ .nav-wrap .brand{flex-shrink:0}
+ .nav.is-open{display:flex;max-height:min(75vh,600px);overflow-y:auto}
+ .nav a{min-height:44px;display:flex;align-items:center}
+ .nav .nav-mobile-cta{display:flex!important;align-items:center;justify-content:center}
+ .hero-copy{min-width:0}
+ .hero-visual{min-width:0}
+}
+@media(max-width:600px){
+ .hero-shell{width:100%;overflow:hidden}
+ .hero-grid{min-width:0}
+ .hero-copy h1{overflow-wrap:break-word}
+ .hero-visual .deal-app{max-width:100%}
+ .form-row{min-width:0}
+ .pricing-card{min-width:0}
+ .footer-links{row-gap:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="/" aria-label="Vuelerta inicio"><img src="/assets/logo.svg" alt="">Vuelerta</a>
@@ -427,7 +456,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   </div>
 </header>
 
-<main>
+<main id="main-content">
 <section class="hero">
   <div class="container">
     <div class="hero-shell">
@@ -703,6 +732,14 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
   document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
   document.addEventListener('click',event=>{if(menu&&nav&&!menu.contains(event.target)&&!nav.contains(event.target))closeMenu()});
   window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu()});
+  const menuObserver = new MutationObserver(()=>{
+    if(!nav||!menu)return;
+    if(nav.classList.contains('is-open')){
+      const first=nav.querySelector('a');
+      if(first && document.activeElement===menu)first.focus({preventScroll:true});
+    }
+  });
+  if(nav)menuObserver.observe(nav,{attributes:true,attributeFilter:['class']});
   const form=document.getElementById('waitlist-form');
   const status=document.getElementById('form-status');
   form?.addEventListener('submit',async e=>{
@@ -720,7 +757,7 @@ h3{font-size:23px;line-height:1.12;font-weight:800}
       const r=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const data=await r.json();
       if(!r.ok) throw new Error(data.error||'No pudimos guardar tu solicitud.');
-      status.textContent='Solicitud registrada. El envío automático de correos todavía no está activo; conserva esta página como referencia.';
+      status.textContent='Solicitud recibida. El acceso todavía no está habilitado y el envío automático de correos está en preparación.';
       form.reset();
       document.getElementById('origin').value='LIM';
     }catch(err){
